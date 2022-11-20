@@ -1,0 +1,59 @@
+create database Airlines;
+
+use Airlines;
+
+//User_Details//
+
+create table Register_Details( user_name varchar(100) PRIMERY KEY,
+DoB DATE,
+Age int,
+Mobile_no int,
+First_Name varchar(100),
+Last_Name varchar(100),
+Gender varchar(10),
+Address varchar(300));
+
+//for flight//
+
+create table Flight(Flight_No int PRIMARY KEY,
+Flight_Name varchar(20),
+Departure_Time DATETIME,
+Arrival_Time DATETIME,
+Source varchar(100),
+Destination varchar(100),
+Seat_Available int,
+Distance int);
+
+//class//
+
+create table Class(Class_type varchar(100),
+Price int,
+Flight_No int,
+CONSTRAINT FOREIGN KEY (Flight_No) REFERENCES Flight (Flight_No));
+
+//Airline//
+
+create table Airline(Contact_No int, Airline_Name varchar(100));
+
+//ticket//
+
+create table Ticket(PNR_No int,
+Flight_No int,
+Date Date, 
+Passenger_Name varchar(100),
+Source varchar(100),
+Destination varchar(100),
+Seat_No int);
+
+//Coupons//
+
+create table Coupons(Coupon_Id int,
+Discount_Amount varchar(100));
+
+//payment//
+
+create table Payment(Transaction_Id int PRIMARY KEY,
+Payment_Mode varchar(100),
+Amount int);
+
+
