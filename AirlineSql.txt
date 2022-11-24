@@ -4,7 +4,7 @@ use Airlines;
 
 //User_Details//
 
-create table Register_Details( user_name varchar(100) PRIMERY KEY,
+create table Register_Details( user_name varchar(100) PRIMARY KEY,
 DoB DATE,
 Age int,
 Mobile_no int,
